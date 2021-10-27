@@ -1,0 +1,82 @@
+.nav-link{
+    margin-right: 25px;
+}
+
+.navbar-brand{      
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-left: 16px !important;
+}
+
+.navbar-brand::before{
+    content: "";
+    position: absolute;
+    width: 29px;
+    height: 75px;
+    background: linear-gradient(rgb(78, 224, 72,0),rgb(17, 185, 236,0));
+    top:-20px;
+    left: 9px;
+    z-index: -9999;
+    animation:rotate 2s linear 3.5s infinite ;
+}
+
+.navbar-brand::after{
+    content: "";
+    position: absolute;
+    background:#212529;
+    top:0px;
+    left:0px;
+    z-index: -9998;
+    top:2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 10px;
+}
+
+span {
+    font-size: 25px;
+    position: relative;
+    top:-2px;
+	text-shadow: 0 0 5px #ff00de;
+}
+
+span::before {
+    content: "T";
+    position: absolute;
+    font-size: 36px;
+    top:-10px;
+    left: 8px;
+
+}
+
+span::after {
+    content: "T";
+    position: absolute;
+    font-size: 36px;
+    top:-10px;
+    left: -12px;
+}
+
+
+@keyframes rotate {
+    0%{
+        background: linear-gradient(rgb(78, 224, 72),rgb(17, 185, 236));
+    }
+    50% {
+        transform:rotate(90deg) scaleX(0.5);        
+    }
+
+    100% {
+        transform:rotate(360deg);
+        background: linear-gradient(rgb(78, 224, 72),rgb(17, 185, 236));
+    }
+    
+}
+
+
+
+
+
+
