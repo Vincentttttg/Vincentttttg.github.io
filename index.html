@@ -91,7 +91,7 @@
       gsap.from('.navbar', { duration:2, y: '-100px', ease: 'bounce', opacity:.6, delay:3});
       gsap.registerPlugin(TextPlugin);
       const t1 = gsap.timeline({repeat:-1, yoyo:true});
-      t1.to('h1', {duration:2.5,text:" Hello" + '<br>' + "There!", ease: 'ease-in-out', delay: .5});
+      t1.to('h1', {duration:2.5, delay:1.5, text:" Hello" + '<br>' + "There!", ease: 'ease-in-out'});
       let links = document.querySelectorAll('.nav-link');
       links.forEach( elem => {
         elem.addEventListener("click",function(){
