@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-    /* scroll-padding-top: 80px; */
+    scroll-padding-top: 80px;
 }
 
 .nav-link{
@@ -86,7 +86,7 @@ a span::after {
     margin-top:-2px;
 }
 
-img {
+.Home img {
     filter: sepia(50%) grayscale(50%) drop-shadow( 0 0 35px rgba(255,0,222,1)) ;
     box-shadow: 0 0 5px 5px rgba(255, 0, 222,1);
     border-radius: 50% !important;
@@ -106,9 +106,17 @@ h3.display-1 {
 
 }
 
+h2.display-2 {
+    color:black;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+}
+
 h1.display-1 {
     color:white;
-    margin-bottom: 35px;
+    margin-bottom: 0px;
     letter-spacing: 10px;
     text-transform: uppercase;
     font-weight: 700 !important;
@@ -116,13 +124,31 @@ h1.display-1 {
     text-shadow: 5px 5px 10px #ff00de;
 }
 
-.display-4 {
+.Home .display-4 {
     font-family: 'Oswald', sans-serif;
     color:white;
     letter-spacing: 5px;
     text-shadow: 0 0 20px yellow;
     margin: 50px 0;
     text-transform: uppercase;
+}
+
+.project-title {
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 30px;
+} 
+
+.project-title .display-4 {   
+    font-size: calc(0.675rem + 3vw) !important;  
+    letter-spacing: -1px;
+}
+
+.Project p {   
+    font-size: 18px;
+    text-align: justify;
+    font-family: cursive;
+    margin-bottom: 0px;
 }
 
 .btn-lg {
@@ -132,9 +158,10 @@ h1.display-1 {
     text-shadow: 0 0 20px yellow;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 3px;
+    font-size: calc(1rem + 1vw)!important;
 }
 
-p{
+footer p{
     margin: auto !important;
     color:white;
     text-shadow: 0 0 10px #ff00de;   
@@ -276,6 +303,11 @@ footer a:hover{
     animation: loader2 1s ease-in-out 2.5s 1 forwards
 }
 
+.bi-x-square {
+    font-size: 30px;
+    color:white;
+}
+
 .Home{
     background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)), url('/images/pexels-alex-conchillos-3648850\ \(1\).jpg');
     background-size: cover;
@@ -283,9 +315,12 @@ footer a:hover{
     background-position: center;     
   }
   .Project{
-    width:100%;
-    height:600px;
-    background: yellow;
+    background: linear-gradient(rgba(217, 225, 233,1) 0%-15%,rgba(217, 225, 233,0.2) 15%-100%), url('/images/pexels-aleksandar-pasaric-1323712.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    margin-top:-10px;
+      
   }
   .Contract{
     width:100%;
@@ -354,15 +389,8 @@ footer a:hover{
     }
 }
 
-@media (max-width: 1200px)  {
-    .btn-lg {
-        font-size: calc(1rem + 1vw)!important;
-    }
-
-}
-
-@media (max-width: 992px) and (min-width: 768px) {
-    .display-4 {
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .Home .display-4 {
         margin:35px 0;
     }
 
@@ -380,10 +408,14 @@ footer a:hover{
     .btn-lg {
         font-size: 40px !important;
     }
+
+    .project-title .display-4 {
+        font-size: 3rem !important;
+    }
 }
 
 @media (min-width: 768px) { 
-    p {
+    footer p {
         padding-left: 25px;
     }
 
@@ -393,16 +425,24 @@ footer a:hover{
         margin-top: 0px !important;
     }
 
+    .Project {
+        margin-top: -20px !important;
+    }
+
+    .modal-dialog {
+        max-width: 700px !important;
+    }
+
  }
 
- @media (max-width: 767px) {
-    .display-4 {
+ @media (max-width: 767.98px) {
+    .Home .display-4 {
         margin: 0 0 35px 0;
         font-size : calc(0.6rem + 2.5vw) !important;
     }
 
     h1.display-1 {
-        height: calc(8rem + 4.5vw);
+        height: calc(7rem + 5vw);
     }
 
     .loader {
@@ -417,7 +457,7 @@ footer a:hover{
 
  }
 
- @media (max-width: 576px) { 
+ @media (max-width: 575.98px) { 
     .offcanvas-collapse{
         position:absolute;
         right:0px;
@@ -446,16 +486,39 @@ footer a:hover{
         margin-right: 0;
     }
 
-    img {
-        width: 230px;
-        height: auto!important;
+    .Home img {
+        width: calc(12rem + 5vw);
+        height: calc(12rem + 5vw);
+    }
+
+    .Project {
+        margin-top: -5px !important;
+    }
+
+    .tag-helper {
+        font-size: calc(0.5rem + 1.6vw) !important;
+    }
+
+    .project-title {
+        margin-bottom: 20px;
+    }
+
+    .Project p {
+        font-size: calc(0.6rem + 1.6vw);
     }
 
  }
 
- @media (max-width: 400px) { 
+ @media (max-width: 399.98px) { 
     .bi-display {
         max-width: 275px;
+    }
+ }
+
+ @media (min-width: 576px) and (max-width: 991.98px) { 
+    .Home img {
+        width:  calc(14rem + 5vw);
+        height: calc(14rem + 5vw);
     }
  }
 
