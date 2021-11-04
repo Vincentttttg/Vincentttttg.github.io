@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <Link rel= "stylesheet" href="style.css">
-      <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital@1&family=Montserrat:wght@700&family=Oswald&family=Roboto+Mono&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital@1&family=Montserrat:wght@700&family=Oswald&family=Recursive&family=Roboto+Mono&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
@@ -22,7 +22,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="offcanvas-collapse navbar-collapse justify-content-end" id="navbartoggle">
-          <div class="navbar-nav me-md-5">
+          <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" href="#Home">Home</a>
             <a class="nav-link" href="#Project">Project</a>
             <a class="nav-link" href="#Contact">Contact</a>
@@ -72,7 +72,7 @@
     </section>
 
 
-    <section id="Project" class="Project">
+    <section id="Project" class="Project pb-4">
       <div class="container">
          <div class="row py-5 px-2">
            <div class="col-12 d-flex justify-content-center">
@@ -121,8 +121,8 @@
              </div>
             </div>
             <div class= "pt-3 pb-4 px-md-3 border-top border-bottom border-dark">
-             <p>A web-based application to provide online fish market transaction as a platform allowing user as seller to register their business for selling their product digitally. 
-                On the other side, user as customer can directly place an order and make payment for any available products.</p>
+             <p>A web-based application to provide online fish market transaction as a platform which allow user as seller to register their business for selling their product digitally. 
+                On the other side, user as customer can directly place an order and make a payment for any available products.</p>
               <div class="project-images d-flex mt-md-4">
                 <div class="row">
                  <div class="col-md-6 col-12 mt-4 mt-md-0">
@@ -141,11 +141,92 @@
           </div>            
          </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,64L48,80C96,96,192,128,288,133.3C384,139,480,117,576,96C672,75,768,53,864,48C960,43,1056,53,1152,74.7C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     </section>
 
 
-    <section id="Contact" class="Contract"></section>
+    <section id="Contact" class="Contact pt-3 pb-5">
+      <div class="container">
+         <div class="row py-5 px-2 px-sm-0">
+           <div class="col-12 d-flex justify-content-center">
+             <h3 class="display-2 text-center d-flex align-items-center"><i class="bi bi-lightning"></i>Contact Me<i class="bi bi-lightning"></i></h3>
+           </div>           
+         </div>
+         <div class=" row py-md-5 pb-5 pt-0 px-2 px-sm-0">
+           <div class="col-md-6 d-flex flex-column align-items-center pb-5 pb-md-2 justify-content-center">
+            <div class="row gx-lg-5 gx-4 text-white d-flex w-100 py-4">
+              <div class="col-xl-4 col-3 d-flex align-items-center justify-content-end">
+                <div class="icon d-flex justify-content-center align-items-center">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>              
+              </div>             
+              <div class="col-xl-8 col-9 d-flex flex-column padding-0">
+                <h5 class="display-3">Address</h5>
+                <h6 class=" display-6">Indonesia, Riau</h6>
+              </div>
+            </div>
+            <div class="row gx-lg-5 gx-4 text-white d-flex w-100 py-4">
+              <div class="col-xl-4 col-3 d-flex align-items-center justify-content-end">
+                <div class="icon d-flex justify-content-center align-items-center">
+                  <i class="bi bi-envelope-fill"></i>
+                </div>   
+              </div>             
+              <div class="col-xl-8 col-9 d-flex flex-column padding-0">
+                <h5 class="display-3">Email</h5>
+                <h6 class=" display-6">guivanovincent13@gmail.com</h6>
+              </div>
+            </div> 
+            <div class="row gx-lg-5 gx-4 text-white d-flex w-100 py-4">
+              <div class="col-xl-4 col-3 d-flex align-items-center justify-content-end">
+                <div class="icon d-flex justify-content-center align-items-center">
+                  <i class="bi bi-telephone-fill"></i>
+                </div>            
+              </div>             
+              <div class="col-xl-8 col-9 d-flex flex-column padding-0">
+                <h5 class="display-3">Phone</h5>
+                <h6 class=" display-6">012345678</h6>
+              </div>
+            </div>        
+           </div>
+           <div class="col-md-6 d-flex pb-2 justify-content-xl-start justify-content-center">
+            <form class="px-5 bg-secondary1" novalidate>
+              <div class="box my-5">
+                <input class="input-form" id="exampleinputemail1" autocomplete="off" required>
+                <label for="exampleinputemail1">Name</label>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your name.
+                </div>
+              </div>
+              <div class="box mb-5">              
+                <input class="input-form" id="email" autocomplete="off" required>
+                <label for="email">Email</label>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your email.
+                </div>
+              </div>
+              <div class="box mb-4">                
+                <textarea class="input-form" id="message" rows="3" autocomplete="off" required></textarea>
+                <label for="message">Message</label>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your message.
+                </div>
+              </div>
+              <div class="mb-4">
+                <button type="submit" class="btn btn-dark w-100 rounded-0 py-2 btn-submit">Submit</button>
+              </div>              
+            </form>
+           </div>
+         </div>        
+      </div>
+    </section>
     
     <footer class="bg-dark py-3">
       <div class="container py-2 d-flex flex-md-row flex-column">
@@ -222,6 +303,21 @@
         var modalBodyImage = exampleModal.querySelector('.modal-body img')
         modalBodyImage.src = src
       })
+
+      var forms = document.querySelectorAll('.bg-secondary1')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
 
 
     </script>
