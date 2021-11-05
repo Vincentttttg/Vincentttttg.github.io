@@ -32,9 +32,9 @@
     </nav>
 
     <div class="page-loader">
-      <div class="loader bi bi-triangle"></div>
-      <div class="loader bi bi-square"></div>
-      <div class="loader bi bi-x-lg"></div>
+      <div class="loader rounded-2">
+        <h6 class=" display-5 mb-0">Loading</h6>
+      </div>
     </div>
     <div class="page-loader-1"></div>
     <div class="page-loader-2"></div>
@@ -190,30 +190,30 @@
            <div class="col-md-6 d-flex pb-2 justify-content-xl-start justify-content-center">
             <form class="px-5 bg-secondary1" novalidate>
               <div class="box my-5">
-                <input class="input-form" id="exampleinputemail1" autocomplete="off" required>
-                <label for="exampleinputemail1">Name</label>
+                <input class="input-form" id="namee" autocomplete="off" required name="name">
+                <label for="namee">Name</label>
                 <div class="valid-feedback">
-                  Looks good!
+                  Good enough!
                 </div>
                 <div class="invalid-feedback">
                   Please enter your name.
                 </div>
               </div>
               <div class="box mb-5">              
-                <input class="input-form" id="email" autocomplete="off" required>
+                <input class="input-form" id="email" autocomplete="off" required name="email">
                 <label for="email">Email</label>
                 <div class="valid-feedback">
-                  Looks good!
+                  Good enough!
                 </div>
                 <div class="invalid-feedback">
                   Please enter your email.
                 </div>
               </div>
               <div class="box mb-4">                
-                <textarea class="input-form" id="message" rows="3" autocomplete="off" required></textarea>
+                <textarea class="input-form" id="message" rows="3" autocomplete="off" required name="message"></textarea>
                 <label for="message">Message</label>
                 <div class="valid-feedback">
-                  Looks good!
+                  Good enough!
                 </div>
                 <div class="invalid-feedback">
                   Please enter your message.
@@ -221,6 +221,10 @@
               </div>
               <div class="mb-4">
                 <button type="submit" class="btn btn-dark w-100 rounded-0 py-2 btn-submit">Submit</button>
+                <button class="btn btn-dark w-100 rounded-0 py-2 btn-loading d-none" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Loading...
+                </button>
               </div>              
             </form>
            </div>
@@ -254,6 +258,7 @@
     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/TextPlugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       gsap.from('.navbar', { duration:2, y: '-100px', ease: 'bounce', opacity:.6, delay:3});
       gsap.registerPlugin(TextPlugin);
@@ -304,22 +309,60 @@
         modalBodyImage.src = src
       })
 
-      var forms = document.querySelectorAll('.bg-secondary1')
-
+      var forms = document.querySelectorAll('.bg-secondary1');
+      var scriptURL = 'https://script.google.com/macros/s/AKfycbwOx6BlgtcWstV24UuZj47FY1ubY729xQzHKTZOdnP-cdG04m5m_ISkiyfkNQWblrqq5A/exec';
+      var btnload = document.querySelector('.btn-loading');
+      var btnsubmit = document.querySelector('.btn-submit');
       // Loop over them and prevent submission
       Array.prototype.slice.call(forms)
         .forEach(function (form) {
           form.addEventListener('submit', function (event) {
+            event.preventDefault()
+            event.stopPropagation()
+            btnload.classList.toggle('d-none')
+            btnsubmit.classList.toggle('d-none')
             if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
+              form.classList.add('was-validated')
+              btnload.classList.toggle('d-none')
+              btnsubmit.classList.toggle('d-none')
             }
-
-            form.classList.add('was-validated')
+            else{
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .finally(() => {
+                  btnload.classList.toggle('d-none')
+                  btnsubmit.classList.toggle('d-none')
+                  form.classList.remove('was-validated')
+                  form.reset()
+                })
+                .then((response) => {
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Thank You!',
+                    text: 'Your message has been delivered successfully.',
+                    confirmButtonText: 'Close',
+                    buttonsStyling: false,
+                    customClass : {
+                      confirmButton : 'w-100 btn btn-success'
+                    }
+                  })
+                  console.log('Success', response)                  
+                }) 
+                .catch((error) => {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Sorry!',
+                    text: error.message,
+                    confirmButtonText: 'Close',
+                    buttonsStyling: false,
+                    customClass : {
+                      confirmButton : 'w-100 btn btn-danger'
+                    }
+                  })
+                  console.error('Error', error.message)
+                })
+            }
           }, false)
         })
-
-
     </script>
   </body>
 </html>
