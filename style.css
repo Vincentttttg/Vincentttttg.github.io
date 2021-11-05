@@ -294,9 +294,9 @@ footer a:hover{
 
 .loader h6 {
     color:white;
-    font-family: 'Oswald', sans-serif;
     letter-spacing: 10px;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 /* .page-loader .bi{
